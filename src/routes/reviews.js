@@ -4,6 +4,8 @@ import Review from "../models/review.js";
 import auth from "../middleware/auth.js";
 import axios from "axios";
 
+const router = express.Router()
+
 dotenv.config();
 
 router.get("/movie", async (req, res) => {
