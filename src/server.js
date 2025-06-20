@@ -8,7 +8,7 @@ import authrouter from './routes/auth.js';
 import reviewrouter from './routes/reviews.js';
 const app = express();
 app.use(cors({
-  origin: "https://your-vercel-url.vercel.app",
+  origin: "https://movierbuzz-backend.onrender.com",
   credentials: true
 }));
 app.use(express.json());
