@@ -1,9 +1,10 @@
-require("dotenv").config();
-const express = require("express")
-const router = express.Router()
-const Review = require("../models/review")
-const auth = require("../middleware/auth")
-const axios = require("axios")
+import dotenv from "dotenv";
+import express from "express";
+import Review from "../models/review.js";
+import auth from "../middleware/auth.js";
+import axios from "axios";
+
+dotenv.config();
 
 router.get("/movie", async (req, res) => {
   const { title } = req.query;
