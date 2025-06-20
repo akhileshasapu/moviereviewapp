@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: moviebuzz-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://akhileshasapu2004:Akhileshasapu@cluster0.nczizjm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        value: 35dfbc298894674c686f0694ab12023b0bdaeb8055d631560623c52516fdcab53067b4c92a1143e7f8ae86839da50a07e2c0a4bfc2108a8ab241883c75f7885
+      - key: OMDB_API_KEY
+        value: 3327f4ab
