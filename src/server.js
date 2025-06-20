@@ -6,7 +6,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import authrouter from './routes/auth.js';
 import reviewrouter from './routes/reviews.js';
-
+const app = express();
 app.use(cors({
   origin: "https://your-vercel-url.vercel.app",
   credentials: true
