@@ -1,8 +1,11 @@
-require('dotenv').config();
-const express = require("express")
-const cors = require("cors")
-const  mongoose = require("mongoose")
-const app = express();
+import dotenv from 'dotenv';
+dotenv.config();
+
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import authrouter from './routes/auth.js';
+import reviewrouter from './routes/reviews.js';
 
 app.use(cors({
   origin: "https://your-vercel-url.vercel.app",
@@ -19,9 +22,6 @@ mongoose
   .catch((err) => {
     console.log("error is ", err);
   });
-
-  const authrouter = require("../src/routes/auth")
-  const reviewrouter = require("../src/routes/reviews")
 
   app.use("/api/auth",authrouter)
   app.use("/api/reviews",reviewrouter)
