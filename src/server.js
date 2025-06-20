@@ -7,10 +7,22 @@ import mongoose from 'mongoose';
 import authrouter from './routes/auth.js';
 import reviewrouter from './routes/reviews.js';
 const app = express();
+const allowedOrigins = [
+  "https://moviebuzzreviewwebsite.vercel.app",
+  "http://localhost:3000"
+];
+
 app.use(cors({
-  origin: "https://movierbuzz-backend.onrender.com",
-  credentials: true
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
 }));
+
 app.use(express.json());
 mongoose
   .connect(
