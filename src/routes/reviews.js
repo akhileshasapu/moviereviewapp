@@ -68,4 +68,4 @@ router.get("/:movieId",async(req,res)=>{
 
 
 
-module.exports = router
+export default router;
